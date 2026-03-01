@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiment Content</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Experiment Details</h1>
+    <nav>
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Physics: Projectile Motion</h2>
+      <p>Simulate motion under gravity with adjustable angle and velocity.</p>
+      <canvas id="canvas" width="600" height="400"></canvas>
+      <script>
+        function calculateProjectile(angle, velocity, time) {
+          const g = 9.81;
+          const rad = angle * (Math.PI / 180);
+          const x = velocity * Math.cos(rad) * time;
+          const y = velocity * Math.sin(rad) * time - 0.5 * g * time * time;
+          return { x, y };
+        }
+        // You can expand this with interactive controls later
+      </script>
+    </article>
+
+    <article>
+      <h2>Chemistry: Acid-Base Titration</h2>
+      <p>Visualize pH changes during titration with interactive graphs.</p>
+    </article>
+
+    <article>
+      <h2>Biology: Cell Division</h2>
+      <p>Step through mitosis and meiosis with animations.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LearnWeb 6 Cents</p>
+  </footer>
+</body>
+</html>
