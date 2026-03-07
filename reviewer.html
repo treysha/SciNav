@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SciNav | Reviewer Test by Topic</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { flex: 1; padding: 100px 20px 40px; }
+    h2 { text-align: center; color: #00ffcc; margin-bottom: 20px; font-size: 2.2em; animation: fadeIn 2s ease; }
+    .quiz-section { background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; margin: 20px auto; max-width: 800px; animation: fadeIn 2s ease; }
+    .quiz-section h3 { color: #ffcc00; margin-bottom: 10px; }
+    .quiz-section p { font-weight: bold; }
+    .quiz-section label { display: block; margin: 6px 0; }
+    button { margin-top: 15px; padding: 10px 20px; border: none; border-radius: 8px; background: #ff6600; color: white; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #ff3300; }
+    .score { text-align: center; font-size: 1.2em; margin-top: 10px; color: #fff; }
+    .reward { display: none; text-align: center; font-size: 1.5em; font-weight: bold; margin-top: 10px; animation: flash 1s infinite alternate; }
+    @keyframes flash { from { color: #00ffcc; } to { color: #ffcc00; } }
+    nav { background: linear-gradient(90deg, #004080, #0080ff); padding: 12px; position: fixed; width: 100%; top: 0; z-index: 10; }
+    nav ul { list-style: none; display: flex; justify-content: space-around; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
+    nav ul li a:hover { color: #ffcc00; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="search.html">🔎 Knowledge Search</a></li>
+      <li><a href="reviewer.html">📘 Reviewer</a></li>
+      <li><a href="case-studies.html">📑 Case Studies</a></li>
+      <li><a href="interactive.html">🧪 Experiments</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Reviewer Test by Topic 🎯</h2>
+    <p style="text-align:center;">Answer each topic’s 10 questions and submit separately to see your score.</p>
+
+    <!-- Biology -->
+    <div class="quiz-section" id="biology">
+      <h3>Biology 🧬</h3>
+      <p>Q1: What molecule carries genetic instructions?</p>
+        <label><input type="radio" name="bio1" value="DNA"> DNA</label>
+        <label><input type="radio" name="bio1" value="RNA"> RNA</label>
+
+        <p>Q2: What process produces gametes?</p>
+        <label><input type="radio" name="bio2" value="Meiosis"> Meiosis</label>
+        <label><input type="radio" name="bio2" value="Mitosis"> Mitosis</label>
+
+        <p>Q3: Which organelle performs photosynthesis?</p>
+        <label><input type="radio" name="bio3" value="Chloroplast"> Chloroplast</label>
+        <label><input type="radio" name="bio3" value="Mitochondria"> Mitochondria</label>
+
+        <p>Q4: What is the basic unit of life?</p>
+        <label><input type="radio" name="bio4" value="Cell"> Cell</label>
+        <label><input type="radio" name="bio4" value="Atom"> Atom</label>
+
+        <p>Q5: Who is the father of genetics?</p>
+        <label><input type="radio" name="bio5" value="Mendel"> Gregor Mendel</label>
+        <label><input type="radio" name="bio5" value="Darwin"> Charles Darwin</label>
+
+        <p>Q6: What process releases energy from glucose?</p>
+        <label><input type="radio" name="bio6" value="Respiration"> Respiration</label>
+        <label><input type="radio" name="bio6" value="Photosynthesis"> Photosynthesis</label>
+
+        <p>Q7: What theory explains species adaptation?</p>
+        <label><input type="radio" name="bio7" value="Evolution"> Evolution</label>
+        <label><input type="radio" name="bio7" value="Cell Theory"> Cell Theory</label>
+
+        <p>Q8: What is biodiversity?</p>
+        <label><input type="radio" name="bio8" value="Variety"> Variety of life forms</label>
+        <label><input type="radio" name="bio8" value="Energy"> Energy in ecosystems</label>
+
+        <p>Q9: Which system circulates blood?</p>
+        <label><input type="radio" name="bio9" value="Circulatory"> Circulatory System</label>
+        <label><input type="radio" name="bio9" value="Respiratory"> Respiratory System</label>
+
+        <p>Q10: What carries traits from parents to offspring?</p>
+        <label><input type="radio" name="bio10" value="Genes"> Genes</label>
+        <label><input type="radio" name="bio10" value="Proteins"> Proteins</label>
+    </div>
+    
+      <div style="text-align:center;">
+        <button type="button" onclick="calculateTopicScore('bio')">Submit Biology</button>
+      </div>
+      <div class="score" id="bioScore"></div>
+      <div class="reward" id="bioReward"></div>
+    </div>
+
+    <!-- Physics -->
+    <div class="quiz-section" id="physics">
+      <h3>Physics ⚛️</h3>
+      <p>Q1: Which law explains motion and forces?</p>
+        <label><input type="radio" name="phy1" value="Newton"> Newton’s Laws</label>
+        <label><input type="radio" name="phy1" value="Relativity"> Relativity</label>
+
+        <p>Q2: What is the unit of force?</p>
+        <label><input type="radio" name="phy2" value="Newton"> Newton</label>
+        <label><input type="radio" name="phy2" value="Joule"> Joule</label>
+
+        <p>Q3: What type of energy is stored due to position?</p>
+        <label><input type="radio" name="phy3" value="Potential"> Potential Energy</label>
+        <label><input type="radio" name="phy3" value="Kinetic"> Kinetic Energy</label>
+
+        <p>Q4: What type of wave is sound?</p>
+        <label><input type="radio" name="phy4" value="Longitudinal"> Longitudinal</label>
+        <label><input type="radio" name="phy4" value="Transverse"> Transverse</label>
+
+        <p>Q5: What flows in an electric circuit?</p>
+        <label><input type="radio" name="phy5" value="Current"> Electric Current</label>
+        <label><input type="radio" name="phy5" value="Heat"> Heat</label>
+
+        <p>Q6: What produces a magnetic field?</p>
+        <label><input type="radio" name="phy6" value="Moving Charges"> Moving Charges</label>
+        <label><input type="radio" name="phy6" value="Light"> Light</label>
+
+        <p>Q7: Which law explains heat transfer?</p>
+        <label><input type="radio" name="phy7" value="Thermodynamics"> Thermodynamics</label>
+        <label><input type="radio" name="phy7" value="Gravity"> Gravity</label>
+
+        <p>Q8: What force attracts objects toward each other?</p>
+        <label><input type="radio" name="phy8" value="Gravity"> Gravity</label>
+        <label><input type="radio" name="phy8" value="Magnetism"> Magnetism</label>
+
+        <p>Q9: Which theory explains space and time?</p>
+        <label><input type="radio" name="phy9" value="Relativity"> Relativity</label>
+        <label><input type="radio" name="phy9" value="Quantum"> Quantum Mechanics</label>
+
+        <p>Q10: Which branch of physics studies atomic particles?</p>
+        <label><input type="radio" name="phy10" value="Quantum"> Quantum Mechanics</label>
+        <label><input type="radio" name="phy10" value="Thermodynamics"> Thermodynamics</label>
+    </div>
+    
+      <div style="text-align:center;">
+        <button type="button" onclick="calculateTopicScore('phy')">Submit Physics</button>
+      </div>
+      <div class="score" id="phyScore"></div>
+      <div class="reward" id="phyReward"></div>
+    </div>
+
+    <!-- Chemistry -->
+    <div class="quiz-section" id="chemistry">
+      <h3>Chemistry ⚗️</h3>
+      <p>Q1: What is the smallest unit of matter?</p>
+        <label><input type="radio" name="chem1" value="Atom"> Atom</label>
+        <label><input type="radio" name="chem1" value="Molecule"> Molecule</label>
+
+        <p>Q2: What chart organizes all elements?</p>
+        <label><input type="radio" name="chem2" value="Periodic Table"> Periodic Table</label>
+        <label><input type="radio" name="chem2" value="Bond Chart"> Bond Chart</label>
+
+        <p>Q3: What type of bond involves electron sharing?</p>
+        <label><input type="radio" name="chem3" value="Covalent"> Covalent</label>
+        <label><input type="radio" name="chem3" value="Ionic"> Ionic</label>
+
+        <p>Q4: What scale measures acidity and basicity?</p>
+        <label><input type="radio" name="chem4" value="pH"> pH Scale</label>
+        <label><input type="radio" name="chem4" value="Mass"> Mass Scale</label>
+
+        <p>Q5: What term describes a substance transformation?</p>
+        <label><input type="radio" name="chem5" value="Reaction"> Chemical Reaction</label>
+        <label><input type="radio" name="chem5" value="Solution"> Solution</label>
+
+        <p>Q6: What calculation method is used in chemical reactions?</p>
+        <label><input type="radio" name="chem6" value="Stoichiometry"> Stoichiometry</label>
+        <label><input type="radio" name="chem6" value="Thermodynamics"> Thermodynamics</label>
+
+        <p>Q7: What branch studies carbon compounds?</p>
+        <label><input type="radio" name="chem7" value="Organic"> Organic Chemistry</label>
+        <label><input type="radio" name="chem7" value="Inorganic"> Inorganic Chemistry</label>
+
+        <p>Q8: What branch studies non‑carbon compounds?</p>
+        <label><input type="radio" name="chem8" value="Inorganic"> Inorganic Chemistry</label>
+        <label><input type="radio" name="chem8" value="Organic"> Organic Chemistry</label>
+
+        <p>Q9: What is a mixture of solute and solvent called?</p>
+        <label><input type="radio" name="chem9" value="Solution"> Solution</label>
+        <label><input type="radio" name="chem9" value="Polymer"> Polymer</label>
+
+        <p>Q10: What large molecules include plastics?</p>
+        <label><input type="radio" name="chem10" value="Polymers"> Polymers</label>
+        <label><input type="radio" name="chem10" value="Atoms"> Atoms</label>
+    </div>
+    
+      <div style="text-align:center;">
+        <button type="button" onclick="calculateTopicScore('chem')">Submit Chemistry</button>
+      </div>
+      <div class="score" id="chemScore"></div>
+      <div class="reward" id="chemReward"></div>
+    </div>
+
+    <!-- Earth Science -->
+    <div class="quiz-section" id="earthscience">
+      <h3>Earth Science 🌍</h3>
+      <p>Q1: What branch studies rocks and Earth’s structure?</p>
+        <label><input type="radio" name="earth1" value="Geology"> Geology</label>
+        <label><input type="radio" name="earth1" value="Meteorology"> Meteorology</label>
+
+        <p>Q2: What theory explains Earth’s plates movement?</p>
+        <label><input type="radio" name="earth2" value="Plate Tectonics"> Plate Tectonics</label>
+        <label><input type="radio" name="earth2" value="Evolution"> Evolution</label>
+
+        <p>Q3: What natural event releases magma?</p>
+        <label><input type="radio" name="earth3" value="Volcano"> Volcano</label>
+        <label><input type="radio" name="earth3" value="Earthquake"> Earthquake</label>
+
+        <p>Q4: What sudden shaking results from tectonic activity?</p>
+        <label><input type="radio" name="earth4" value="Earthquake"> Earthquake</label>
+        <label><input type="radio" name="earth4" value="Weather"> Weather</label>
+
+        <p>Q5: What term describes short‑term atmospheric conditions?</p>
+        <label><input type="radio" name="earth5" value="Weather"> Weather</label>
+        <label><input type="radio" name="earth5" value="Climate"> Climate</label>
+
+        <p>Q6: What term describes long‑term weather patterns?</p>
+        <label><input type="radio" name="earth6" value="Climate"> Climate</label>
+        <label><input type="radio" name="earth6" value="Weather"> Weather</label>
+
+        <p>Q7: What branch studies oceans and currents?</p>
+        <label><input type="radio" name="earth7" value="Oceanography"> Oceanography</label>
+        <label><input type="radio" name="earth7" value="Astronomy"> Astronomy</label>
+
+        <p>Q8: What branch studies celestial bodies?</p>
+        <label><input type="radio" name="earth8" value="Astronomy"> Astronomy</label>
+        <label><input type="radio" name="earth8" value="Geology"> Geology</label>
+
+        <p>Q9: What branch studies human impacts on ecosystems?</p>
+        <label><input type="radio" name="earth9" value="Environmental"> Environmental Science</label>
+        <label><input type="radio" name="earth9" value="Meteorology"> Meteorology</label>
+
+        <p>Q10: What term describes materials like water, minerals, and fuels?</p>
+        <label><input type="radio" name="earth10" value="Resources"> Natural Resources</label>
+        <label><input type="radio" name="earth10" value="Solutions"> Solutions</label>
+    </div>
+    
+      <div style="text-align:center;">
+        <button type="button" onclick="calculateTopicScore('earth')">Submit Earth Science</button>
+      </div>
+      <div class="score" id="earthScore"></div>
+      <div class="reward" id="earthReward"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 SciNav | Reviewer & Contest Preparation
+  </footer>
+
+  <script>
+    const answers = {
+      bio1:"DNA", bio2:"Meiosis", bio3:"Chloroplast", bio4:"Cell", bio5:"Mendel",
+      bio6:"Respiration", bio7:"Evolution", bio8:"Variety", bio9:"Circulatory", bio10:"Genes",
+      phy1:"Newton", phy2:"Newton", phy3:"Potential", phy4:"Longitudinal", phy5:"Current",
+      phy6:"Moving Charges", phy7:"Thermodynamics", phy8:"Gravity", phy9:"Relativity", phy10:"Quantum",
+      chem1:"Atom", chem2:"Periodic Table", chem3:"Covalent", chem4:"pH", chem5:"Reaction",
+      chem6:"Stoichiometry", chem7:"Organic", chem8:"Inorganic", chem9:"Solution", chem10:"Polymers",
+      earth1:"Geology", earth2:"Plate Tectonics", earth3:"Volcano", earth4:"Earthquake", earth5:"Weather",
+      earth6:"Climate", earth7:"Oceanography", earth8:"Astronomy", earth9:"Environmental", earth10:"Resources"
+    };
+
+    function calculateTopicScore(topic) {
+      let score = 0;
+      for (let i=1; i<=10; i++) {
+        const key = topic+i;
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+      document.getElementById(topic+"Score").innerHTML = "Your Score: " + score + "/10";
+      const reward = document.getElementById(topic+"Reward");
+      reward.style.display = "block";
+      if (score === 10) {
+        reward.innerHTML = "🏆 Perfect! Science Master!";
+      } else if (score >= 7) {
+        reward.innerHTML = "🎉 Great job!";
+      } else if (score >= 4) {
+        reward.innerHTML = "👍 Good effort!";
+      } else {
+        reward.innerHTML = "📖 Keep practicing!";
+      }
+    }
+  </script>
+</body>
+            </html>
