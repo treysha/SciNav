@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SciNav | Experiments</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { flex: 1; padding: 100px 20px 40px; }
+    h2 { text-align: center; color: #00ffcc; margin-bottom: 20px; font-size: 2.2em; animation: fadeIn 2s ease; }
+    .experiment-card { background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; margin: 20px auto; max-width: 800px; animation: fadeIn 2s ease; }
+    .experiment-card h3 { color: #ffcc00; margin-bottom: 10px; }
+    .experiment-card p { margin-bottom: 10px; }
+    .steps { display: none; margin-top: 10px; line-height: 1.6; }
+    button { margin: 5px; padding: 8px 15px; border: none; border-radius: 8px; background: #ff6600; color: white; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #ff3300; }
+    .reward { display: none; text-align: center; font-size: 1.5em; font-weight: bold; margin-top: 10px; animation: flash 1s infinite alternate; }
+    @keyframes flash { from { color: #00ffcc; } to { color: #ffcc00; } }
+    nav { background: linear-gradient(90deg, #004080, #0080ff); padding: 12px; position: fixed; width: 100%; top: 0; z-index: 10; }
+    nav ul { list-style: none; display: flex; justify-content: space-around; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 6px; }
+    nav ul li a:hover { color: #ffcc00; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="search.html">🔎 Knowledge Search</a></li>
+      <li><a href="reviewer.html">📘 Reviewer</a></li>
+      <li><a href="case-studies.html">📑 Case Studies</a></li>
+      <li><a href="interactive.html">🧪 Experiments</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Interactive Experiments 🧪</h2>
+    <p style="text-align:center;">Explore these experiments by topic. Expand steps and mark them completed to earn rewards!</p>
+
+    <!-- Biology Experiments -->
+    <div class="experiment-card">
+      <h3>Biology: Photosynthesis in Leaves 🌱</h3>
+      <p>Observe starch formation in sunlight-exposed leaves.</p>
+      <button onclick="toggleSteps('bio1')">View Steps</button>
+      <button onclick="completeExperiment('bio1Reward')">Mark Completed</button>
+      <div class="steps" id="bio1">
+        <ol><li>Boil a leaf, remove chlorophyll with alcohol.</li><li>Rinse and add iodine.</li><li>Blue-black color shows starch.</li></ol>
+      </div>
+      <div class="reward" id="bio1Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Biology: Osmosis with Potato 🥔</h3>
+      <p>Demonstrate osmosis using salt water and potato slices.</p>
+      <button onclick="toggleSteps('bio2')">View Steps</button>
+      <button onclick="completeExperiment('bio2Reward')">Mark Completed</button>
+      <div class="steps" id="bio2">
+        <ol><li>Cut potato slices.</li><li>Place one in salt water, one in fresh water.</li><li>Observe shrinkage vs swelling.</li></ol>
+      </div>
+      <div class="reward" id="bio2Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Biology: Germination 🌱</h3>
+      <p>Observe seed sprouting under different conditions.</p>
+      <button onclick="toggleSteps('bio3')">View Steps</button>
+      <button onclick="completeExperiment('bio3Reward')">Mark Completed</button>
+      <div class="steps" id="bio3">
+        <ol><li>Place seeds in moist cotton.</li><li>Keep one in sunlight, one in dark.</li><li>Compare growth.</li></ol>
+      </div>
+      <div class="reward" id="bio3Reward"></div>
+    </div>
+
+    <!-- Physics Experiments -->
+    <div class="experiment-card">
+      <h3>Physics: Balloon Rocket 🚀</h3>
+      <p>Newton’s Third Law demonstration.</p>
+      <button onclick="toggleSteps('phy1')">View Steps</button>
+      <button onclick="completeExperiment('phy1Reward')">Mark Completed</button>
+      <div class="steps" id="phy1">
+        <ol><li>Thread straw on string.</li><li>Tape balloon to straw.</li><li>Release balloon.</li></ol>
+      </div>
+      <div class="reward" id="phy1Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Physics: Pendulum Motion ⏳</h3>
+      <p>Observe periodic motion.</p>
+      <button onclick="toggleSteps('phy2')">View Steps</button>
+      <button onclick="completeExperiment('phy2Reward')">Mark Completed</button>
+      <div class="steps" id="phy2">
+        <ol><li>Hang a weight on string.</li><li>Pull and release.</li><li>Observe oscillations.</li></ol>
+      </div>
+      <div class="reward" id="phy2Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Physics: Static Electricity ⚡</h3>
+      <p>Use a balloon to attract paper bits.</p>
+      <button onclick="toggleSteps('phy3')">View Steps</button>
+      <button onclick="completeExperiment('phy3Reward')">Mark Completed</button>
+      <div class="steps" id="phy3">
+        <ol><li>Rub balloon on hair.</li><li>Bring near paper bits.</li><li>Observe attraction.</li></ol>
+      </div>
+      <div class="reward" id="phy3Reward"></div>
+    </div>
+
+    <!-- Chemistry Experiments -->
+    <div class="experiment-card">
+      <h3>Chemistry: Vinegar & Baking Soda Volcano 🌋</h3>
+      <p>Acid-base reaction producing CO₂.</p>
+      <button onclick="toggleSteps('chem1')">View Steps</button>
+      <button onclick="completeExperiment('chem1Reward')">Mark Completed</button>
+      <div class="steps" id="chem1">
+        <ol><li>Put baking soda in container.</li><li>Add vinegar.</li><li>Observe fizzing.</li></ol>
+      </div>
+      <div class="reward" id="chem1Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Chemistry: Rust Formation 🔩</h3>
+      <p>Observe oxidation of iron.</p>
+      <button onclick="toggleSteps('chem2')">View Steps</button>
+      <button onclick="completeExperiment('chem2Reward')">Mark Completed</button>
+      <div class="steps" id="chem2">
+        <ol><li>Place iron nail in water.</li><li>Leave for days.</li><li>Observe rust.</li></ol>
+      </div>
+      <div class="reward" id="chem2Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Chemistry: Litmus Test 🎨</h3>
+      <p>Test acids and bases using litmus paper.</p>
+      <button onclick="toggleSteps('chem3')">View Steps</button>
+      <button onclick="completeExperiment('chem3Reward')">Mark Completed</button>
+      <div class="steps" id="chem3">
+        <ol>
+          <li>Dip litmus paper in vinegar (acid).</li>
+          <li>Observe red color.</li>
+          <li>Dip litmus paper in baking soda solution (base).</li>
+          <li>Observe blue color.</li>
+        </ol>
+      </div>
+      <div class="reward" id="chem3Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Chemistry: Crystal Formation 💎</h3>
+      <p>Grow salt crystals from a solution.</p>
+      <button onclick="toggleSteps('chem4')">View Steps</button>
+      <button onclick="completeExperiment('chem4Reward')">Mark Completed</button>
+      <div class="steps" id="chem4">
+        <ol>
+          <li>Dissolve salt in hot water.</li>
+          <li>Pour into a jar and suspend a string.</li>
+          <li>Leave for days.</li>
+          <li>Observe crystals forming on string.</li>
+        </ol>
+      </div>
+      <div class="reward" id="chem4Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Chemistry: Density Layers 🥤</h3>
+      <p>Create colorful density layers with liquids.</p>
+      <button onclick="toggleSteps('chem5')">View Steps</button>
+      <button onclick="completeExperiment('chem5Reward')">Mark Completed</button>
+      <div class="steps" id="chem5">
+        <ol>
+          <li>Pour honey, dish soap, water, oil, and alcohol into a glass.</li>
+          <li>Observe layers forming due to density differences.</li>
+        </ol>
+      </div>
+      <div class="reward" id="chem5Reward"></div>
+    </div>
+
+    <!-- Earth Science Experiments -->
+    <div class="experiment-card">
+      <h3>Earth Science: Water Filtration 🌍</h3>
+      <p>Learn how soil and sand filter dirty water.</p>
+      <button onclick="toggleSteps('earth1')">View Steps</button>
+      <button onclick="completeExperiment('earth1Reward')">Mark Completed</button>
+      <div class="steps" id="earth1">
+        <ol>
+          <li>Layer gravel, sand, and charcoal in a bottle.</li>
+          <li>Pour dirty water through.</li>
+          <li>Observe cleaner water dripping out.</li>
+        </ol>
+      </div>
+      <div class="reward" id="earth1Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Earth Science: Mini Tornado 🌪️</h3>
+      <p>Create a vortex in a bottle.</p>
+      <button onclick="toggleSteps('earth2')">View Steps</button>
+      <button onclick="completeExperiment('earth2Reward')">Mark Completed</button>
+      <div class="steps" id="earth2">
+        <ol>
+          <li>Fill a bottle with water.</li>
+          <li>Swirl it in circles.</li>
+          <li>Observe tornado-like vortex.</li>
+        </ol>
+      </div>
+      <div class="reward" id="earth2Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Earth Science: Rock Cycle Simulation 🪨</h3>
+      <p>Model the rock cycle with crayons.</p>
+      <button onclick="toggleSteps('earth3')">View Steps</button>
+      <button onclick="completeExperiment('earth3Reward')">Mark Completed</button>
+      <div class="steps" id="earth3">
+        <ol>
+          <li>Shave crayons (sediments).</li>
+          <li>Press together (sedimentary rock).</li>
+          <li>Heat gently (metamorphic rock).</li>
+          <li>Melt completely (igneous rock).</li>
+        </ol>
+      </div>
+      <div class="reward" id="earth3Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Earth Science: Solar Oven ☀️</h3>
+      <p>Use sunlight to cook food.</p>
+      <button onclick="toggleSteps('earth4')">View Steps</button>
+      <button onclick="completeExperiment('earth4Reward')">Mark Completed</button>
+      <div class="steps" id="earth4">
+        <ol>
+          <li>Line a box with foil.</li>
+          <li>Place food inside.</li>
+          <li>Cover with plastic wrap.</li>
+          <li>Leave in sunlight to heat.</li>
+        </ol>
+      </div>
+      <div class="reward" id="earth4Reward"></div>
+    </div>
+
+    <div class="experiment-card">
+      <h3>Earth Science: Cloud in a Bottle ☁️</h3>
+      <p>Create condensation clouds.</p>
+      <button onclick="toggleSteps('earth5')">View Steps</button>
+      <button onclick="completeExperiment('earth5Reward')">Mark Completed</button>
+      <div class="steps" id="earth5">
+        <ol>
+          <li>Put warm water in a bottle.</li>
+          <li>Add a lit match briefly, then cap.</li>
+          <li>Squeeze and release bottle.</li>
+          <li>Observe cloud formation.</li>
+        </ol>
+      </div>
+      <div class="reward" id="earth5Reward"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 SciNav | Interactive Experiments
+  </footer>
+
+  <script>
+    function toggleSteps(id) {
+      const steps = document.getElementById(id);
+      steps.style.display = (steps.style.display === "block") ? "none" : "block";
+    }
+
+    function completeExperiment(rewardId) {
+      const reward = document.getElementById(rewardId);
+      reward.style.display = "block";
+      reward.innerHTML = "🎉 Well done! You completed this experiment!";
+    }
+  </script>
+</body>
+                                                               </html>
