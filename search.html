@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SciNav | Knowledge Search</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main {
+      flex: 1;
+      padding: 100px 20px 40px; /* offset for fixed nav */
+    }
+    h2 {
+      text-align: center;
+      color: #00ffcc;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+      animation: fadeIn 2s ease;
+    }
+    .search-box {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 70%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
+    #result {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+    }
+    .section {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 800px;
+      animation: fadeIn 2s ease;
+    }
+    .section h3 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .section ul {
+      text-align: left;
+      line-height: 1.6;
+    }
+    .section ul li a {
+      color: #00ffcc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .section ul li a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+    nav {
+      background: linear-gradient(90deg, #004080, #0080ff);
+      padding: 12px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    nav ul li a:hover { color: #ffcc00; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="search.html">🔎 Knowledge Search</a></li>
+      <li><a href="reviewer.html">📘 Reviewer</a></li>
+      <li><a href="case-studies.html">📑 Case Studies</a></li>
+      <li><a href="interactive.html">🧪 Experiments</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Science Knowledge Search 🔎</h2>
+    <div class="search-box">
+      <input type="text" id="searchBox" placeholder="Search topics (Biology, Physics, Chemistry, Earth)...">
+    </div>
+    <div id="result"></div>
+
+    <!-- Biology -->
+    <div class="section" data-topic="biology">
+      <h3>Biology 🧬</h3>
+      <ul>
+        <li><a href="https://www.nature.com/subjects/cell-biology" target="_blank">Cell Theory – All living things are made of cells.</a></li>
+        <li><a href="https://www.genome.gov/genetics-glossary/DNA" target="_blank">DNA – Genetic instructions for life.</a></li>
+        <li><a href="https://www.britannica.com/science/mitosis" target="_blank">Mitosis – Cell division for growth.</a></li>
+        <li><a href="https://www.britannica.com/science/meiosis" target="_blank">Meiosis – Produces gametes.</a></li>
+        <li><a href="https://www.nationalgeographic.org/encyclopedia/photosynthesis/" target="_blank">Photosynthesis – Plants convert sunlight.</a></li>
+        <li><a href="https://www.britannica.com/science/cellular-respiration" target="_blank">Respiration – Energy release from glucose.</a></li>
+        <li><a href="https://www.genome.gov/genetics-glossary/Genetics" target="_blank">Genetics – Study of heredity.</a></li>
+        <li><a href="https://www.britannica.com/science/evolution-scientific-theory" target="_blank">Evolution – Natural selection.</a></li>
+        <li><a href="https://www.nationalgeographic.org/encyclopedia/ecology/" target="_blank">Ecology – Organism interactions.</a></li>
+        <li><a href="https://www.britannica.com/science/human-body" target="_blank">Human Systems – Circulatory, respiratory, nervous.</a></li>
+      </ul>
+    </div>
+
+    <!-- Physics -->
+    <div class="section" data-topic="physics">
+      <h3>Physics ⚛️</h3>
+      <ul>
+        <li><a href="https://www.britannica.com/science/Newtons-laws-of-motion" target="_blank">Newton’s Laws – Motion rules.</a></li>
+        <li><a href="https://www.britannica.com/science/force" target="_blank">Force – Push or pull.</a></li>
+        <li><a href="https://www.britannica.com/science/energy" target="_blank">Energy – Kinetic & potential.</a></li>
+        <li><a href="https://www.britannica.com/science/wave" target="_blank">Waves – Sound & light.</a></li>
+        <li><a href="https://www.britannica.com/science/electricity" target="_blank">Electricity – Flow of charge.</a></li>
+        <li><a href="https://www.britannica.com/science/magnetism" target="_blank">Magnetism – Magnetic fields.</a></li>
+        <li><a href="https://www.britannica.com/science/thermodynamics" target="_blank">Thermodynamics – Heat transfer.</a></li>
+        <li><a href="https://www.britannica.com/science/gravity" target="_blank">Gravity – Attraction between masses.</a></li>
+        <li><a href="https://www.britannica.com/science/relativity" target="_blank">Relativity – Einstein’s theory.</a></li>
+        <li><a href="https://www.britannica.com/science/quantum-mechanics" target="_blank">Quantum Mechanics – Atomic physics.</a></li>
+      </ul>
+    </div>
+
+   <!-- Chemistry -->
+    <div class="section" data-topic="chemistry">
+      <h3>Chemistry ⚗️</h3>
+      <ul>
+        <li><a href="https://www.britannica.com/science/atom" target="_blank">Atom – Smallest unit of matter.</a></li>
+        <li><a href="https://www.britannica.com/science/periodic-table" target="_blank">Periodic Table – Elements chart.</a></li>
+        <li><a href="https://www.britannica.com/science/chemical-bond" target="_blank">Chemical Bonds – Ionic, covalent.</a></li>
+        <li><a href="https://www.britannica.com/science/acid" target="_blank">Acids & Bases – pH scale.</a></li>
+        <li><a href="https://www.britannica.com/science/chemical-reaction" target="_blank">Reactions – Transformation of substances.</a></li>
+        <li><a href="https://www.britannica.com/science/stoichiometry" target="_blank">Stoichiometry – Reaction calculations.</a></li>
+        <li><a href="https://www.britannica.com/science/organic-chemistry" target="_blank">Organic Chemistry – Carbon compounds.</a></li>
+        <li><a href="https://www.britannica.com/science/inorganic-chemistry" target="_blank">Inorganic Chemistry – Non‑carbon compounds.</a></li>
+        <li><a href="https://www.britannica.com/science/solution-chemistry" target="_blank">Solutions – Solute + solvent.</a></li>
+        <li><a href="https://www.britannica.com/science/polymer" target="_blank">Polymers – Plastics & biomolecules.</a></li>
+      </ul>
+    </div>
+
+    <!-- Earth Science -->
+    <div class="section" data-topic="earth science">
+      <h3>Earth Science 🌍</h3>
+      <ul>
+        <li><a href="https://www.britannica.com/science/geology" target="_blank">Geology – Rocks & Earth’s structure.</a></li>
+        <li><a href="https://www.britannica.com/science/plate-tectonics" target="_blank">Plate Tectonics – Earth’s plates movement.</a></li>
+        <li><a href="https://www.britannica.com/science/volcano" target="_blank">Volcanoes – Magma eruptions.</a></li>
+        <li><a href="https://www.britannica.com/science/earthquake-geology" target="_blank">Earthquakes – Tectonic shaking.</a></li>
+        <li><a href="https://www.britannica.com/science/weather" target="_blank">Weather – Short‑term conditions.</a></li>
+        <li><a href="https://www.britannica.com/science/climate" target="_blank">Climate – Long‑term patterns.</a></li>
+        <li><a href="https://www.britannica.com/science/oceanography" target="_blank">Oceanography – Oceans & currents.</a></li>
+        <li><a href="https://www.britannica.com/science/astronomy" target="_blank">Astronomy – Celestial bodies.</a></li>
+        <li><a href="https://www.britannica.com/science/environmental-science" target="_blank">Environmental Science – Human impacts.</a></li>
+        <li><a href="https://www.britannica.com/science/natural-resource" target="_blank">Natural Resources – Water, minerals, fuels.</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 SciNav | Knowledge Search Page
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    const sections = document.querySelectorAll(".section");
+    const resultDiv = document.getElementById("result");
+
+    searchBox.addEventListener("input", function() {
+      const query = searchBox.value.toLowerCase();
+      let found = false;
+      sections.forEach(section => {
+        const topic = section.getAttribute("data-topic");
+        const text = section.innerText.toLowerCase();
+        if ((topic.includes(query) || text.includes(query)) && query !== "") {
+          section.style.display = "block";
+          resultDiv.innerHTML = `<strong>Found:</strong> ${section.querySelector("h3").innerText}`;
+          found = true;
+        } else if (query === "") {
+          section.style.display = "block";
+          resultDiv.innerHTML = "";
+        } else {
+          section.style.display = "none";
+        }
+      });
+      if (!found && query !== "") {
+        resultDiv.innerHTML = "No matching topic found.";
+      }
+    });
+  </script>
+</body>
+              </html>
