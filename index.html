@@ -2,35 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LearnWeb 6 Cents: Navigating Digital Education</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SciNav | Home</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      background: linear-gradient(90deg, #004080, #0080ff);
+      padding: 12px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav ul li a:hover { color: #ffcc00; }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 60px; /* offset for fixed nav */
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 90%;
+      animation: fadeIn 2s ease;
+    }
+
+    .overlay h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    .overlay p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff6600;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #ff3300; }
+
+    /* Floating science icons */
+    .icon {
+      position: absolute;
+      font-size: 2em;
+      animation: float 15s linear infinite;
+      opacity: 0.8;
+    }
+    .icon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .icon:nth-child(2) { left: 30%; animation-delay: 3s; }
+    .icon:nth-child(3) { left: 50%; animation-delay: 6s; }
+    .icon:nth-child(4) { left: 70%; animation-delay: 9s; }
+    .icon:nth-child(5) { left: 85%; animation-delay: 12s; }
+
+    @keyframes float {
+      0% { top: 100%; transform: rotate(0deg); }
+      50% { transform: rotate(180deg); }
+      100% { top: -10%; transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: rgba(0,0,0,0.6);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>LearnWeb 6 Cents</h1>
-    <p>Navigating Digital Education for Science Majors</p>
-    <nav>
-      <a href="content.html">Explore Experiments</a>
-    </nav>
-  </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="search.html">Knowledge Search</a></li>
+      <li><a href="reviewer.html">Reviewer</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="interactive.html">Experiments</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <section class="card">
-      <h2>Physics</h2>
-      <p>Interactive simulations of motion and forces.</p>
-    </section>
-    <section class="card">
-      <h2>Chemistry</h2>
-      <p>Virtual titrations and reaction experiments.</p>
-    </section>
-    <section class="card">
-      <h2>Biology</h2>
-      <p>Cell division, genetics, and microscope explorations.</p>
-    </section>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>SciNav 🧪</h1>
+      <p>Explore, Review, and Connect Science to Real Life</p>
+      <a href="search.html" class="btn">Start Exploring</a>
+    </div>
 
+    <!-- Animated Science Icons -->
+    <div class="icon">⚛️</div>
+    <div class="icon">🧬</div>
+    <div class="icon">🔬</div>
+    <div class="icon">⚗️</div>
+    <div class="icon">🛰️</div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 LearnWeb 6 Cents</p>
+    © 2026 SciNav | Built for Science Majors
   </footer>
 </body>
-</html>
+  </html>
